@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISRO Satellite Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="isroApp" ng-controller="myCtrl">
+    <div class="container">
+        <h1>ISRO Customers</h1>
+        <input type="text" id="search-box" ng-model="searchText" placeholder="Search for a country...">
+        <button id="search-btn" ng-click="search()">Search</button>
+        <div class="insights">
+            <div class="Satellite" ng-repeat="satellite in filteredSatellites">
+                <h3 class="country">{{ satellite.country }}</h3>
+                <div class="middle">
+                    <small class="id"><b>Name:</b> {{ satellite.id }}</small>
+                    <small class="launcher"><b>Launcher:</b> {{ satellite.launcher }}</small>
+                    <small class="mass"><b>Mass:</b> {{ satellite.mass }}</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/angular.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
